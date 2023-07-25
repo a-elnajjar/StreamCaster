@@ -7,7 +7,10 @@
 
 import {React, useState } from 'react';
 import type {PropsWithChildren} from 'react';
-import CourseCard from './src/CourseCard'; 
+import CourseCard from './src/screens/CourseCard'; 
+import { NativeModule, NativeModules } from 'react-native';
+
+
 import {
   SafeAreaView,
   ScrollView,
@@ -20,94 +23,34 @@ import {
   TextInput
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import  HomeScreen from './src/screens/HomeScreen';
+import  DownloadScreen from './src/screens/DownloadScreen';
 
 
 
 
+
+// console.log(NativeModules.AudioVideoPlayer);
+// NativeModules.AudioVideoPlayer.increment( 
+//   value => {console.log('the count is '+ value);
+// });
+
+// console.log(NativeModules.AudioVideoPlayer.getConstants());
+
+const Tab = createBottomTabNavigator();
 
 function App(): JSX.Element {
-   const [enteredSearchTermText, setEnteredSearchTermText] = useState('');
-  const [courseList, setCourseList] = useState([]);
-
-  const dummyCourseData = [
-    {
-      courseName: 'Introduction to React',
-      subjectDuration: '2 hours 30 minutes',
-      courseDescription: 'Learn the basics of React and build your first app.',
-    },
-    {
-      courseName: 'Advanced JavaScript Concepts',
-      subjectDuration: '1 hour 45 minutes',
-      courseDescription: 'Master advanced JavaScript topics like closures and prototypal inheritance.',
-    },
-    {
-      courseName: 'CSS Fundamentals',
-      subjectDuration: '1 hour 15 minutes',
-      courseDescription: 'Understand the core concepts of CSS and design responsive layouts.',
-    },
-    {
-      courseName: 'Node.js for Beginners',
-      subjectDuration: '3 hours',
-      courseDescription: 'Get started with Node.js and build server-side applications.',
-    },
-    {
-      courseName: 'Database Design and SQL',
-      subjectDuration: '2 hours 15 minutes',
-      courseDescription: 'Learn about database design principles and SQL queries.',
-    },
-    // Add more dummy course data here
-  ];
-  
-
-  function goalInputHandler(enteredText:string) {
-    setEnteredSearchTermText(enteredText);
-  }
-
-  function searchCourseHandler() {
-    const filteredCourses = dummyCourseData.filter((course) =>
-      course.courseName.toLowerCase().includes(enteredSearchTermText.toLowerCase())
-    );
-    setCourseList(filteredCourses);
-  }
-
   return (
-    <View style={styles.appContainer}>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Search course..."
-          onChangeText={goalInputHandler}
-          value={enteredSearchTermText}
-        />
-        <Button title="Search" onPress={searchCourseHandler} />
-      </View>
 
-      <ScrollView style={styles.courseContainer}>
-        <View style={styles.container}>
-          {courseList.length > 0 ? (
-            courseList.map((course, index) => (
-              <CourseCard
-                key={index}
-                courseName={course.courseName}
-                subjectDuration={course.subjectDuration}
-                courseDescription={course.courseDescription}
-              />
-            ))
-          ) : (
-            <View style={styles.noResultContainer}>
-              <Text>No results found.</Text>
-            </View>
-          )}
-        </View>
-      </ScrollView>
-    </View>
+      <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Download" component={DownloadScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+
   );
 }
 
