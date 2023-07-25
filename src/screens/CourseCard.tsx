@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet,Button } from 'react-native';
+
+import { OpenVideoPlayer } from './OpenVideoPlayer';
 
 
 interface CourseCardProps {
@@ -8,12 +10,15 @@ interface CourseCardProps {
   courseDescription: string;
 }
 
+
+
 const CourseCard: React.FC<CourseCardProps> = ({ courseName, subjectDuration, courseDescription }) => {
   return (
     <View style={styles.card}>
       <Text style={styles.courseName}>{courseName}</Text>
       <Text style={styles.subjectDuration}>{subjectDuration}</Text>
       <Text style={styles.courseDescription}>{courseDescription}</Text>
+      <OpenVideoPlayer />
     </View>
   );
 };
