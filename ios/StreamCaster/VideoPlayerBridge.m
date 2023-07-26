@@ -28,11 +28,11 @@ RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(renderVideoFromUrl: (NSString *)urlString
   }
   // Dispatch the following code asynchronously on the main queue
   dispatch_async(dispatch_get_main_queue(), ^{
-    // Create the AVPlayerViewController
-    AVPlayerViewController *viewController = [[AVPlayerViewController alloc] init];
+    // Create the custom VideoPlayerViewController
+    VideoPlayerViewController *viewController = [[VideoPlayerViewController alloc] init];
     // Set the AVPlayer for the controller
     viewController.player = player;
-    // Set some settings like volume, playback controls visibility and video gravity
+    // Set some settings like volume, playback controls visibility, and video gravity
     viewController.player.volume = 1;
     viewController.showsPlaybackControls = YES;
     viewController.videoGravity = AVLayerVideoGravityResizeAspect;
@@ -40,7 +40,7 @@ RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(renderVideoFromUrl: (NSString *)urlString
     // Get the key window and the root ViewController for the application
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
     UIViewController *rootViewController = window.rootViewController;
-    // Present the AVPlayer modally
+    // Present the VideoPlayerViewController modally
     [rootViewController presentViewController:viewController animated:true completion:^{
       [player play];
     }];
