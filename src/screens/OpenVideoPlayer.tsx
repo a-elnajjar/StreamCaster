@@ -1,6 +1,12 @@
 import React from 'react';
-import { View, Button } from 'react-native';
-import { renderVideoFromUrl } from './VideoPlayer'; // Update the path accordingly
+import { View, Button,NativeModules } from 'react-native';
+
+
+const { VideoPlayerBridge } = NativeModules;
+
+export const renderVideoFromUrl = (urlString) => {
+  return VideoPlayerBridge.renderVideo(urlString);
+};
 
 export const OpenVideoPlayer = () => {
   const handlePlayVideo = async () => {
