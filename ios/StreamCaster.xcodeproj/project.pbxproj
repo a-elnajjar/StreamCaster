@@ -14,6 +14,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-StreamCaster-StreamCasterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-StreamCaster-StreamCasterTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8E9A005F2A71D06C00EA4B74 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9A005E2A71D06C00EA4B74 /* VideoPlayerViewController.m */; };
 		8EB429A62A70ACDD00614AE1 /* VideoPlayerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB429A52A70ACDD00614AE1 /* VideoPlayerBridge.m */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-StreamCaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StreamCaster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = StreamCaster/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-StreamCaster-StreamCasterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamCaster-StreamCasterTests.release.xcconfig"; path = "Target Support Files/Pods-StreamCaster-StreamCasterTests/Pods-StreamCaster-StreamCasterTests.release.xcconfig"; sourceTree = "<group>"; };
+		8E9A005D2A71D06C00EA4B74 /* VideoPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VideoPlayerViewController.h; path = StreamCaster/VideoPlayerViewController.h; sourceTree = "<group>"; };
+		8E9A005E2A71D06C00EA4B74 /* VideoPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VideoPlayerViewController.m; path = StreamCaster/VideoPlayerViewController.m; sourceTree = "<group>"; };
 		8EB429A42A70ACB100614AE1 /* VideoPlayerBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VideoPlayerBridge.h; path = StreamCaster/VideoPlayerBridge.h; sourceTree = "<group>"; };
 		8EB429A52A70ACDD00614AE1 /* VideoPlayerBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VideoPlayerBridge.m; path = StreamCaster/VideoPlayerBridge.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -97,6 +100,8 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				8EB429A42A70ACB100614AE1 /* VideoPlayerBridge.h */,
 				8EB429A52A70ACDD00614AE1 /* VideoPlayerBridge.m */,
+				8E9A005D2A71D06C00EA4B74 /* VideoPlayerViewController.h */,
+				8E9A005E2A71D06C00EA4B74 /* VideoPlayerViewController.m */,
 			);
 			name = StreamCaster;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				8E9A005F2A71D06C00EA4B74 /* VideoPlayerViewController.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				8EB429A62A70ACDD00614AE1 /* VideoPlayerBridge.m in Sources */,
 			);

@@ -10,6 +10,7 @@
 #import <React/RCTBridgeModule.h>
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "VideoPlayerViewController.h"
 
 @implementation VideoPlayerBridge
 
