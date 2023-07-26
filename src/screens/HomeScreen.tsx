@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, ScrollView, StyleSheet, Text } from 'react-native';
 import CourseCard from './CourseCard';
+import { renderVideoFromUrl } from './VideoPlayer';
 
 const HomeScreen = () => {
   const [enteredSearchTermText, setEnteredSearchTermText] = useState('');
@@ -67,6 +68,7 @@ const HomeScreen = () => {
                 courseName={course.courseName}
                 subjectDuration={course.subjectDuration}
                 courseDescription={course.courseDescription}
+                
               />
             ))
           ) : (
