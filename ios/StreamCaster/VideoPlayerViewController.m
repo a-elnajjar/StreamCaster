@@ -19,7 +19,7 @@
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait; // Replace with your desired orientation for the AVPlayerViewController
+    return UIInterfaceOrientationMaskLandscape; // Replace with your desired orientation for the AVPlayerViewController
 }
 
 
