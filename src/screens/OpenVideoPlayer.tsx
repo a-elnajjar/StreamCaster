@@ -5,7 +5,7 @@ import { View, Button,NativeModules } from 'react-native';
 const { VideoPlayerBridge } = NativeModules;
 
 export const renderVideoFromUrl = (urlString) => {
-  return VideoPlayerBridge.renderVideoFromUrl(urlString);
+  return VideoPlayerBridge.renderVideoFromUrl(urlString)
 };
 
 export const OpenVideoPlayer = () => {

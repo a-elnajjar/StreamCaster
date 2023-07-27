@@ -14,7 +14,11 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-StreamCaster-StreamCasterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-StreamCaster-StreamCasterTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		8EB429A62A70ACDD00614AE1 /* VideoPlayerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB429A52A70ACDD00614AE1 /* VideoPlayerBridge.m */; };
+		8E774FF32A72072F00D4FC94 /* VideoPlayerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774FF22A72072F00D4FC94 /* VideoPlayerBridge.swift */; };
+		8E774FF52A720A2F00D4FC94 /* AVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E774FF42A720A2F00D4FC94 /* AVPlayerViewController.swift */; };
+		8E774FF82A7216A900D4FC94 /* VideoPlayerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E774FF72A7216A900D4FC94 /* VideoPlayerBridge.m */; };
+		8E9A005F2A71D06C00EA4B74 /* _VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9A005E2A71D06C00EA4B74 /* _VideoPlayerViewController.m */; };
+		8EB429A62A70ACDD00614AE1 /* _VideoPlayerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB429A52A70ACDD00614AE1 /* _VideoPlayerBridge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +48,14 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-StreamCaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StreamCaster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = StreamCaster/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-StreamCaster-StreamCasterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamCaster-StreamCasterTests.release.xcconfig"; path = "Target Support Files/Pods-StreamCaster-StreamCasterTests/Pods-StreamCaster-StreamCasterTests.release.xcconfig"; sourceTree = "<group>"; };
-		8EB429A42A70ACB100614AE1 /* VideoPlayerBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VideoPlayerBridge.h; path = StreamCaster/VideoPlayerBridge.h; sourceTree = "<group>"; };
-		8EB429A52A70ACDD00614AE1 /* VideoPlayerBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VideoPlayerBridge.m; path = StreamCaster/VideoPlayerBridge.m; sourceTree = "<group>"; };
+		8E774FF12A72068D00D4FC94 /* StreamCaster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StreamCaster-Bridging-Header.h"; sourceTree = "<group>"; };
+		8E774FF22A72072F00D4FC94 /* VideoPlayerBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerBridge.swift; sourceTree = "<group>"; };
+		8E774FF42A720A2F00D4FC94 /* AVPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerViewController.swift; sourceTree = "<group>"; };
+		8E774FF72A7216A900D4FC94 /* VideoPlayerBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VideoPlayerBridge.m; path = StreamCaster/VideoPlayerBridge.m; sourceTree = "<group>"; };
+		8E9A005D2A71D06C00EA4B74 /* _VideoPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = _VideoPlayerViewController.h; path = StreamCaster/_VideoPlayerViewController.h; sourceTree = "<group>"; };
+		8E9A005E2A71D06C00EA4B74 /* _VideoPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = _VideoPlayerViewController.m; path = StreamCaster/_VideoPlayerViewController.m; sourceTree = "<group>"; };
+		8EB429A42A70ACB100614AE1 /* _VideoPlayerBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = _VideoPlayerBridge.h; path = StreamCaster/_VideoPlayerBridge.h; sourceTree = "<group>"; };
+		8EB429A52A70ACDD00614AE1 /* _VideoPlayerBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = _VideoPlayerBridge.m; path = StreamCaster/_VideoPlayerBridge.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -89,14 +99,21 @@
 		13B07FAE1A68108700A75B9A /* StreamCaster */ = {
 			isa = PBXGroup;
 			children = (
+				8E774FF62A72165B00D4FC94 /* New Group */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				8EB429A42A70ACB100614AE1 /* VideoPlayerBridge.h */,
-				8EB429A52A70ACDD00614AE1 /* VideoPlayerBridge.m */,
+				8EB429A42A70ACB100614AE1 /* _VideoPlayerBridge.h */,
+				8EB429A52A70ACDD00614AE1 /* _VideoPlayerBridge.m */,
+				8E9A005D2A71D06C00EA4B74 /* _VideoPlayerViewController.h */,
+				8E9A005E2A71D06C00EA4B74 /* _VideoPlayerViewController.m */,
+				8E774FF12A72068D00D4FC94 /* StreamCaster-Bridging-Header.h */,
+				8E774FF22A72072F00D4FC94 /* VideoPlayerBridge.swift */,
+				8E774FF42A720A2F00D4FC94 /* AVPlayerViewController.swift */,
+				8E774FF72A7216A900D4FC94 /* VideoPlayerBridge.m */,
 			);
 			name = StreamCaster;
 			sourceTree = "<group>";
@@ -140,6 +157,13 @@
 				00E356EE1AD99517003FC87E /* StreamCasterTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8E774FF62A72165B00D4FC94 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -418,8 +442,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				8E9A005F2A71D06C00EA4B74 /* _VideoPlayerViewController.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				8EB429A62A70ACDD00614AE1 /* VideoPlayerBridge.m in Sources */,
+				8E774FF82A7216A900D4FC94 /* VideoPlayerBridge.m in Sources */,
+				8E774FF32A72072F00D4FC94 /* VideoPlayerBridge.swift in Sources */,
+				8E774FF52A720A2F00D4FC94 /* AVPlayerViewController.swift in Sources */,
+				8EB429A62A70ACDD00614AE1 /* _VideoPlayerBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-StreamCaster-StreamCasterTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -465,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-StreamCaster-StreamCasterTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = StreamCasterTests/Info.plist;

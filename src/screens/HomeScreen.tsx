@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, ScrollView, StyleSheet, Text } from 'react-native';
+import { View, TextInput, Button, ScrollView, StyleSheet, Text,FlatList } from 'react-native';
 import CourseCard from './CourseCard';
 import { renderVideoFromUrl } from './VideoPlayer';
 
 const HomeScreen = () => {
   const [enteredSearchTermText, setEnteredSearchTermText] = useState('');
-  const [courseList, setCourseList] = useState([]);
+  const [courseList, setCourseList] = useState(dummyCourseData);
 
   const dummyCourseData = [
     {
@@ -59,25 +59,25 @@ const HomeScreen = () => {
         <Button title="Search" onPress={searchCourseHandler} />
       </View>
 
-      <ScrollView style={styles.courseContainer}>
-        <View style={styles.container}>
-          {courseList.length > 0 ? (
-            courseList.map((course, index) => (
-              <CourseCard
-                key={index}
-                courseName={course.courseName}
-                subjectDuration={course.subjectDuration}
-                courseDescription={course.courseDescription}
-                
-              />
-            ))
-          ) : (
-            <View style={styles.noResultContainer}>
-              <Text>No results found.</Text>
-            </View>
+
+      {courseList && courseList.length > 0 ? (
+        <FlatList
+          style={styles.courseContainer}
+          data={courseList}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({ item }) => (
+            <CourseCard
+              courseName={item.courseName}
+              subjectDuration={item.subjectDuration}
+              courseDescription={item.courseDescription}
+            />
           )}
+        />
+      ) : (
+        <View style={styles.noResultContainer}>
+          <Text>No results found.</Text>
         </View>
-      </ScrollView>
+      )}
     </View>
   );
 };
