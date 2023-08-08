@@ -13,7 +13,6 @@ interface CourseCardProps {
 }
 
 
-
 const CourseCard: React.FC<CourseCardProps> = ({ courseName, subjectDuration, courseDescription}) => {
 
   const navigation = useNavigation();

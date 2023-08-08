@@ -42,32 +42,13 @@ function App(): JSX.Element {
       <Tab.Navigator>
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Download" component={DownloadScreen} />
-        <Tab.Screen name="Courses" component={CourseDetailStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
 
   );
 }
 
-// Define a stack navigator for the CourseDetailScreen
-const CourseDetailStack = createStackNavigator();
 
-function CourseDetailStackScreen() {
-  return (
-    <CourseDetailStack.Navigator>
-      {/* Screen for the main course list */}
-      <CourseDetailStack.Screen
-        name="Courses"
-        component={CourseCard} // Replace with your actual component
-      />
-      {/* Screen for the course detail */}
-      <CourseDetailStack.Screen
-        name="CourseDetail"
-        component={CourseDetailScreen}
-      />
-    </CourseDetailStack.Navigator>
-  );
-}
 
 const styles = StyleSheet.create({
   appContainer: {
