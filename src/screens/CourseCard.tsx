@@ -1,24 +1,38 @@
 import React from 'react';
 import { View, Text, StyleSheet,Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import { OpenVideoPlayer } from './OpenVideoPlayer';
+// import { OpenVideoPlayer } from './OpenVideoPlayer';
 
 
 interface CourseCardProps {
   courseName: string;
   subjectDuration: string;
   courseDescription: string;
+  
 }
 
 
 
-const CourseCard: React.FC<CourseCardProps> = ({ courseName, subjectDuration, courseDescription }) => {
+const CourseCard: React.FC<CourseCardProps> = ({ courseName, subjectDuration, courseDescription}) => {
+
+  const navigation = useNavigation();
+
+  const handlePress = () => {
+    console.log("test");
+    navigation.navigate('CourseDetail', {
+      courseName,
+      courseDescription,
+    
+    });
+  };
+
   return (
     <View style={styles.card}>
       <Text style={styles.courseName}>{courseName}</Text>
       <Text style={styles.subjectDuration}>{subjectDuration}</Text>
       <Text style={styles.courseDescription}>{courseDescription}</Text>
-      <OpenVideoPlayer />
+      <Button title="View Course" onPress={handlePress} />
     </View>
   );
 };

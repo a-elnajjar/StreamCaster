@@ -25,32 +25,47 @@ import {
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import  HomeScreen from './src/screens/HomeScreen';
 import  DownloadScreen from './src/screens/DownloadScreen';
+import CourseDetailScreen from './src/screens/CourseDetailScreen';
 
 
-
-
-
-// console.log(NativeModules.AudioVideoPlayer);
-// NativeModules.AudioVideoPlayer.increment( 
-//   value => {console.log('the count is '+ value);
-// });
-
-// console.log(NativeModules.AudioVideoPlayer.getConstants());
 
 const Tab = createBottomTabNavigator();
-
+const Stack = createStackNavigator();
 function App(): JSX.Element {
+  
   return (
 
-      <NavigationContainer>
+    <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Download" component={DownloadScreen} />
+        <Tab.Screen name="Courses" component={CourseDetailStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
 
+  );
+}
+
+// Define a stack navigator for the CourseDetailScreen
+const CourseDetailStack = createStackNavigator();
+
+function CourseDetailStackScreen() {
+  return (
+    <CourseDetailStack.Navigator>
+      {/* Screen for the main course list */}
+      <CourseDetailStack.Screen
+        name="Courses"
+        component={CourseCard} // Replace with your actual component
+      />
+      {/* Screen for the course detail */}
+      <CourseDetailStack.Screen
+        name="CourseDetail"
+        component={CourseDetailScreen}
+      />
+    </CourseDetailStack.Navigator>
   );
 }
 

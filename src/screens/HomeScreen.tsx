@@ -12,29 +12,36 @@ const HomeScreen = () => {
       courseName: 'Introduction to React',
       subjectDuration: '2 hours 30 minutes',
       courseDescription: 'Learn the basics of React and build your first app.',
+      episodes: [
+        { episodeTitle: 'Getting Started with React', duration: '45 minutes' },
+        { episodeTitle: 'Components and Props', duration: '1 hour' },
+        { episodeTitle: 'State and Lifecycle', duration: '45 minutes' }
+        // ... other episodes
+      ]
     },
     {
       courseName: 'Advanced JavaScript Concepts',
       subjectDuration: '1 hour 45 minutes',
       courseDescription: 'Master advanced JavaScript topics like closures and prototypal inheritance.',
+      episodes: [
+        { episodeTitle: 'Closures in Depth', duration: '30 minutes' },
+        { episodeTitle: 'Prototypal Inheritance', duration: '1 hour 15 minutes' },
+        // ... other episodes
+      ]
     },
     {
       courseName: 'CSS Fundamentals',
       subjectDuration: '1 hour 15 minutes',
       courseDescription: 'Understand the core concepts of CSS and design responsive layouts.',
+      episodes: [
+        { episodeTitle: 'Introduction to CSS', duration: '30 minutes' },
+        { episodeTitle: 'Selectors and Styles', duration: '45 minutes' },
+        // ... other episodes
+      ]
     },
-    {
-      courseName: 'Node.js for Beginners',
-      subjectDuration: '3 hours',
-      courseDescription: 'Get started with Node.js and build server-side applications.',
-    },
-    {
-      courseName: 'Database Design and SQL',
-      subjectDuration: '2 hours 15 minutes',
-      courseDescription: 'Learn about database design principles and SQL queries.',
-    },
-    
+    // ... other courses
   ];
+  
 
   function goalInputHandler(enteredText) {
     setEnteredSearchTermText(enteredText);
