@@ -5,52 +5,42 @@
  * @format
  */
 
-import {React, useState } from 'react';
+import {React, useEffect, useState} from 'react';
 import type {PropsWithChildren} from 'react';
-import CourseCard from './src/screens/CourseCard'; 
-import { NativeModule, NativeModules } from 'react-native';
-
-
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-  Button,
-  TextInput
-} from 'react-native';
-
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import  HomeScreen from './src/screens/HomeScreen';
-import  DownloadScreen from './src/screens/DownloadScreen';
-
-
-
-
-
-// console.log(NativeModules.AudioVideoPlayer);
-// NativeModules.AudioVideoPlayer.increment( 
-//   value => {console.log('the count is '+ value);
-// });
-
-// console.log(NativeModules.AudioVideoPlayer.getConstants());
+import {AppState,StyleSheet,View,NativeModule, NativeModules} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import HomeScreen from './src/screens/HomeScreen';
+import DownloadScreen from './src/screens/DownloadScreen';
+import CourseCard from './src/screens/CourseCard';
 
 const Tab = createBottomTabNavigator();
 
-function App(): JSX.Element {
-  return (
+function App() {
+  const [isAppActive, setAppActive] = useState(true);
+  const [isBlurred, setBlurred] = useState(false);
 
-      <NavigationContainer>
+  useEffect(() => {
+    const handleAppStateChange = nextAppState => {
+      setAppActive(nextAppState === 'active');
+      setBlurred(nextAppState !== 'active');
+    };
+
+    AppState.addEventListener('change', handleAppStateChange);
+
+    return () => {
+      AppState.removeEventListener('change', handleAppStateChange);
+    };
+  }, []);
+
+  return (
+    <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Download" component={DownloadScreen} />
       </Tab.Navigator>
+      {isBlurred && <View style={styles.blurOverlay} />}
     </NavigationContainer>
-
   );
 }
 
@@ -86,6 +76,11 @@ const styles = StyleSheet.create({
   noResultContainer: {
     alignItems: 'center',
     marginTop: 16,
+  },
+  blurOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    zIndex: 100,
   },
 });
 
